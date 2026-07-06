@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crave | Premium Food Ordering</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar glass">
+        <div class="logo">
+            <span class="logo-icon">🍽️</span> Crave<span class="dot">.</span>
+        </div>
+        <nav class="nav-links">
+            <a href="#home" class="active">Home</a>
+            <a href="#menu">Menu</a>
+            <a href="#about">About</a>
+        </nav>
+        <div class="cart-icon" id="cartBtn">
+            🛍️ <span id="cartBadge" class="badge">0</span>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Delicious Food, <br><span class="gradient-text">Delivered Fast</span></h1>
+                <p>Experience the finest culinary delights crafted with fresh ingredients and passion. Order now and satisfy your cravings.</p>
+                <button class="btn-primary" onclick="document.getElementById('menu').scrollIntoView({behavior: 'smooth'})">Explore Menu</button>
+            </div>
+            <div class="hero-image">
+                <div class="circle-blur"></div>
+                <div class="main-plate">🥗</div>
+            </div>
+        </section>
+
+        <section id="menu" class="menu-section">
+            <div class="section-title">
+                <h2>Our Menu</h2>
+                <div class="filters" id="filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="burger">Burgers</button>
+                    <button class="filter-btn" data-filter="pizza">Pizzas</button>
+                    <button class="filter-btn" data-filter="dessert">Desserts</button>
+                </div>
+            </div>
+
+            <div class="menu-grid" id="menuGrid">
+                <!-- Menu items will be injected here via JS -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Cart Overlay & Sidebar -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items injected here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalValue">$0.00</span>
+            </div>
+            <button class="btn-primary checkout-btn" id="checkoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content glass">
+            <div class="success-icon">✨</div>
+            <h2>Order Placed!</h2>
+            <p>Your delicious food is being prepared and will be delivered shortly.</p>
+            <button class="btn-primary" id="closeModalBtn">Awesome!</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
